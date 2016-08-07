@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{channelpage:typename} 第{channelpage:page}页-{seacms:sitename}</title>
+<meta name="keywords" content="{channelpage:typename}第{channelpage:page}页{channelpage:keywords}" />
+<meta name="description" content="{channelpage:typename}第{channelpage:page}页{channelpage:description}" />
+<link href="images/style.css" rel="stylesheet">
+<script>var sitePath='{seacms:sitepath}'</script>
+<script src="/{seacms:sitepath}js/common.js"></script>
+<script src="/{seacms:sitepath}js/function.js"></script>
+</head>
+{seacms:top}
+<div class="content_zleft">
+  <!--左边 开始-->
+  <DIV class=layout_left>
+	<H2><SPAN class="more"><a href="/{seacms:sitepath}top/new.html">更多&gt;&gt;</a></SPAN>最新添加的{channelpage:typename}</H2>
+	<ul>
+	  {seacms:videolist num=20 order=time type=current}
+	  <li><span><font color="#666">[videolist:time style=mm-dd]</font></span>
+		<div class="title"><a href="[videolist:link]" title="[videolist:name]">[videolist:colorname len=15]</a></div>
+	  </li>
+	  {/seacms:videolist}
+	</UL>
+	<DIV class=space style="padding-bottom:5px;"></DIV>
+  </DIV>
+  <DIV class=layout_left>
+	<H2><SPAN class="more"><a href="/{seacms:sitepath}top/rank.html">更多&gt;&gt;</a></SPAN>热门点播的{channelpage:typename}</H2>
+	<ul>
+	  {seacms:videolist num=20 order=hit type=current}
+	  <li><span><font color="#666">[videolist:time style=mm-dd]</font></span>
+		<div class="title"><a href="[videolist:link]" title="[videolist:name]">[videolist:colorname len=15]</a></div>
+	  </li>
+	  {/seacms:videolist}
+	</ul>
+	<DIV class=space style="padding-bottom:5px;"></DIV>
+  </DIV>
+</div>
+<DIV class=layout_newlist>
+  <DIV class=tit>
+	<H4><SPAN>当前位置:</SPAN>{channelpage:typetext}</H4></DIV>
+  <DIV id=div_1>
+	<DIV class=listBox> {seacms:channellist size=10 order=time}
+	  <UL>
+		<LI onMouseOver="this.className='over'" onMouseOut="this.className=''">
+		  <DIV class=listCover><A href="[channellist:link]"> <img src="[channellist:pic]" alt="[channellist:name]" /> </A> </DIV>
+		  <DIV class=listInfo>
+			<H3><A title="[channellist:name]" href="[channellist:link]">[channellist:name len=10]</A></H3>
+			<P>状态：<SPAN style="COLOR: red">[channellist:note][channellist:state]</SPAN></P>
+			<P>主演：[channellist:actor]</P>
+			<P>分类：[channellist:typename]</P>
+			<P>时间：[channellist:time style=yyyy-mm-dd]</P>
+			<p>推荐度：<img src="images/[channellist:commend].gif" alt="[channellist:name]" /></p>
+			<p><a href="[channellist:link]" ><img style="padding-top:5px;" src="images/xiangqing.jpg" /></a> <a href="[channellist:playlink]" ><img style="padding-top:5px;" src="images/player.jpg" /></a> <a href="[channellist:favLink]"><img style="padding-top:5px;" src="images/shoucang.jpg" /></a></p>
+		  </DIV>
+		</LI>
+	  </UL>
+	  {/seacms:channellist}
+	  </DIV>
+  </DIV>
+  <DIV id=div_3>
+	<DIV class=page> [channellist:pagenumber len=8]</DIV>
+  </DIV>
+</DIV>
+<!--右边 结束-->
+<div id="bottom"> {seacms:foot}</div>
+</body></html>

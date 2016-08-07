@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" /> 
+<title>正在播放 {playpage:name} {playpage:part}</title>
+<meta name="Keywords" content="{playpage:name}{playpage:part}免费在线观看,{playpage:name}剧情介绍,{playpage:name}数据海报" />
+<meta name="description" content="{playpage:name}{playpage:part}免费在线观看,{playpage:name}剧情介绍,{playpage:name}数据海报" />
+<link href="images/style.css" rel="stylesheet">
+<script>var sitePath='{seacms:sitepath}'</script>
+<script src="/{seacms:sitepath}js/common.js"></script>
+<script src="/{seacms:sitepath}js/function.js"></script>
+<script src="/{seacms:sitepath}js/play.js"></script>
+<script>var playn='{playpage:name}', playp='{playpage:part}';</script>
+</head>
+<body>
+{seacms:top}
+<div class="play_left">
+  <!--左边 开始-->
+  <DIV class=layout_left>
+	<H2><SPAN><a href="/{seacms:sitepath}top/rank.html">更多&gt;&gt;</a></SPAN>{playpage:typename}本月热播排行</H2>
+	<UL>
+	  {seacms:videolist num=21 order=hit time=month type=current}
+	  <li><span><font color="red">[videolist:hit]℃</font></span>
+		<div class="title"><a href="[videolist:link]" title="[videolist:name]">[videolist:colorname len=15]</a></div>
+	  </li>
+	  {/seacms:videolist}
+	</UL>
+	<DIV class=space style="padding-bottom:5px;"></DIV>
+  </DIV>
+  <!--左边 结束-->
+  <DIV class=layout_left>
+	<H2><SPAN><a href="/{seacms:sitepath}top/commend.html">更多&gt;&gt;</a></SPAN>{playpage:typename}本月用户推荐排行</H2>
+	<UL>
+	  {seacms:videolist num=21 order=digg time=month type=current}
+	  <li><span><font color="red">[videolist:hit]℃</font></span>
+		<div class="title"><a href="[videolist:link]" title="[videolist:name]">[videolist:colorname len=15]</a></div>
+	  </li>
+	  {/seacms:videolist}
+	</UL>
+	<DIV class=space style="padding-bottom:5px;"></DIV>
+  </DIV>
+</div>
+<!--右边 开始-->
+<DIV class="play_right">
+  <DIV class=tit>
+	<H4><SPAN>当前位置:</SPAN>{playpage:textlink}</H4></DIV>
+  <div id="content_jr" style="margin:0;">
+	<div class="player">{playpage:playurlinfo}{playpage:player}</div>
+	<div class="playding">
+						<ul>
+							<li><a onclick="return parent.video_jump(-1)"  href="javascript:void()">上一集</a></li>
+							<li><a onclick="return parent.video_jump(1)"  href="javascript:void()">下一集</a></li>
+							<li>{playpage:digg}</li>
+							<li>{playpage:tread}</li>
+							<li>{playpage:reporterr}</li>
+							<li><a onclick="addFavorite('http://{seacms:siteurl}','{seacms:sitename}');" href="javascript:void()">收 藏</a></li>
+						</ul>
+					</div>
+	
+  </div>
+  {playpage:playlist}
+  <div id="content_jr">
+	<div class="content_jrtop">
+	  <li style="background:url(images/index_67.jpg) no-repeat;"><span>[playlist:from]点播列表([playlist:intro])</span></li>
+	</div>
+	<div class="videourl"> [playlist:link target=_self] </div>
+  </div>
+  {/playpage:playlist}
+  <div id="content_jr">
+	<div class="content_jrtop">
+	  <li style="background:url(images/index_67.jpg) no-repeat;"><span>影片评论</span></li>
+	</div>
+	<div class="videocomment">
+		{playpage:comment}
+	</div>
+  </div>
+</DIV>
+<!--右边 结束-->
+{seacms:foot}
+</body>
+</html>
